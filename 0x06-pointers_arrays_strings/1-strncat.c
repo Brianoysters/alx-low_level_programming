@@ -2,8 +2,8 @@
 /**
  * _strncat - concatenates two strings
  * @dest: input value
- * @src: input value
- * @n: input value
+ * @src: concat param
+ * @n: concat param
  * Return: destination
  */
 char *_strncat(char *dest, char *src, int n)
