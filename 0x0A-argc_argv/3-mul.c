@@ -1,103 +1,75 @@
 #include <stdio.h>
 #include "main.h"
 
-/**		
-  * _strint - converts a string to an integer		
+/**
+  * _atoi - converts a string to an integer
   * @s: string input
-  * Return: the int converted from the string		
+  * Return: the int converted from the string
   */
-		
-int _strint(char *s)
+
+int _atoi(char *s)
 
 {
-	int i, d, n, len, f, digit;
-	
-	i = 0;
+	int m, o, k, len, p, digit;
 
-	d = 0;
+	m = 0;
 
-	n = 0;
+	o = 0;
+
+	k = 0;
 
 	len = 0;
 
-	f = 0;
+	p = 0;
 
 	digit = 0;
 
 	while (s[len] != '\0')
 		len++;
-	while (i < len && f == 0)
+	while (m < len && p == 0)
 	{
-		if (s[i] == '-')
-			++d;
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[m] == '-')
+			++o;
+		if (s[m] >= '0' && s[m] <= '9')
 		{
-			digit = s[i] - '0';
-			
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			
-			f = 1;
+			digit = s[m] - '0';
 
-			if (s[i + 1] < '0' || s[i + 1] > '9')
+			if (o % 2)
+				digit = -digit;
+			k = k * 10 + digit;
+
+			p = 1;
+
+			if (s[m + 1] < '0' || s[m + 1] > '9')
 				break;
-			f = 0;
+			p = 0;
 		}
-		i++;
-	}	
-	if (f == 0)
+		m++;
+	}
+	if (p == 0)
 		return (0);
-	return (n);
+	return (k);
 }
 
-
 /**
-		
- * main - multiplies two numbers
-		
- * @argc: number of arguments
-		
- * @argv: array of arguments
-		
- *
-		
- * Return: 0 (Success), 1 (Error)
-		
+ * main - outputs the product of two numbers
+ * @argc: arguments counts
+ * @argv: arguments vector
+ * Return: 0 (Success), and 1 if (Error)
  */
-		
+
 int main(int argc, char *argv[])
-		
 {
-		
-	int result, num1, num2;
-		
+	int finding, a, b;
 
-		
 	if (argc < 3 || argc > 3)
-		
 	{
-		
 		printf("Error\n");
-		
 		return (1);
-		
 	}
-		
-
-		
-	num1 = _atoi(argv[1]);
-		
-	num2 = _atoi(argv[2]);
-		
-	result = num1 * num2;
-		
-
-		
-	printf("%d\n", result);
-		
-
-		
+	a = _atoi(argv[1]);
+	b = _atoi(argv[2]);
+	finding = a * b;
+	printf("%d\n", finding);
 	return (0);
-		
 }
