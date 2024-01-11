@@ -9,6 +9,7 @@
 size_t print_dlistint(const dlistint_t *h)
 {
 	int node_count;
+
 	node_count = 0;
 
 	if (h == NULL)
